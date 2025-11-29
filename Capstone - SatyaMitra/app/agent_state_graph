@@ -1,0 +1,19 @@
+digraph {
+	rankdir=LR size="8,5"
+	start [label=start shape=doublecircle]
+	pre_processor [label=pre_processor shape=circle]
+	db_analyst [label=db_analyst shape=circle]
+	researcher [label=researcher shape=circle]
+	skeptic [label=skeptic shape=circle]
+	reporter [label=reporter shape=circle]
+	end [label=end shape=doublecircle]
+	start -> pre_processor
+	pre_processor -> db_analyst [label=db_analyst]
+	pre_processor -> researcher [label=researcher]
+	db_analyst -> reporter [label=reporter]
+	db_analyst -> researcher [label=researcher]
+	researcher -> skeptic
+	skeptic -> reporter [label=reporter]
+	skeptic -> researcher [label=researcher]
+	reporter -> end
+}
